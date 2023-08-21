@@ -1,7 +1,10 @@
+# Module installation
 from tkinter import *
 from random import randint
 
 class Game:
+   
+    """The main class"""
     
     def __init__(self, canvas):
         self.canvas = canvas
@@ -15,26 +18,26 @@ class Game:
     
     def set_apple(self):
         self.apple_coords = [randint(0, 29) for i in range(2)]
-        #Условие, для того чтобы яблоко не лежало на змейке
+        
         if self.apple_coords in self.snake_coords:
             self.set_apple()
-    #Установка нового направления змейки
+    
     def set_direction(self, event):
       
         if event.keysym in self.vector:
             self.direction = self.vector[event.keysym]
-    #Отрисовка игры
+    
     def draw(self):
         self.canvas.delete(ALL)
         x_apple, y_apple = self.apple_coords
         self.canvas.create_rectangle(x_apple*10, y_apple*10, (x_apple+1)*10, (y_apple+1)*10, fill="red", width=0)
         for x, y in self.snake_coords:
             self.canvas.create_rectangle(x*10, y*10, (x+1)*10, (y+1)*10, fill="aquamarine4", width=0)
-    #Метод, который возращает координаты на интервале [0, 29]
+    
     @staticmethod
     def coord_check(coord):
         return 0 if coord > 29 else 29 if coord < 0 else coord
-    #Алгоритм "Оторванный Хвост\Логика игры"       
+          
     def GAME(self):
         self.draw()
         x,y = self.snake_coords[0]
@@ -51,7 +54,7 @@ class Game:
         self.canvas.after(100, self.GAME)
         
         
-#Каркас игры
+#Game frame
 root = Tk()
 canvas = Canvas(root, width=300, height=300, bg="black")
 canvas.pack()
