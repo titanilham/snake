@@ -12,7 +12,7 @@
 
 ##
 
-<img src="https://github.com/titanilham/snake/blob/main/Snake_photo%20.png?raw=true" width="250"/>
+<img src="" width="250"/>
 
 
 
