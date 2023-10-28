@@ -10,9 +10,7 @@
 ### Preview: 
 ![](https://github.com/titanilham/snake/blob/main/snake.png?raw=true) 
 
-##
 
-<img src="https://github.com/titanilham/snake/blob/main/snake_img.png" width="250"/>
 
 
 
